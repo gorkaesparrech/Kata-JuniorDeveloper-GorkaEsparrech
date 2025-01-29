@@ -1,0 +1,63 @@
+body{
+    background-color: dimgray;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    font-size: 5rem;
+    margin-bottom: 2px;
+}
+
+h2{
+    font-size: 2.5rem;
+}
+
+hr{
+    border-color: black;
+    margin-bottom: 25px;
+}
+
+.container{
+    background-color: darkgray;
+    border: 1px solid darkgray;
+    border-radius: 10px; 
+    padding: 20px;
+    width: 60%;
+    margin: 20px auto;
+    box-shadow: 5px, 5px;
+}
+
+.data{
+    font-size: 1.5rem;
+}
+
+.alert{
+    padding: 1.5rem;
+    background-color:brown;
+    border: solid,  0.15rem;
+    border-radius: 5px;
+    border-color: black;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 5%;
+}
+
+.controlButtons{
+    font-size: 1.25rem;
+    margin: 1rem;
+    padding: 1rem;
+    background-color: white;
+    border: solid, 0.25rem;
+    border-radius: 15px;
+    transition: 0.5s;
+}
+
+.controlButtons:hover{
+    color: white;
+    background-color: black;
+    border: solid, 0.25rem;
+    border-radius: 15px;
+    border-color: black;
+}

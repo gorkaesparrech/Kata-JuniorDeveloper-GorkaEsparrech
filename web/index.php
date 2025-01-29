@@ -42,32 +42,55 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="classes\styles\styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    <h2>Rover Control</h2>
-    <form method="POST">
-        <button type="submit" name="fButton">Forward</button>
-        <button type="submit" name="rButton">Right</button>
-        <button type="submit" name="lButton">Left</button>
+    <div class="container">
+        <h1>Rover Control</h1>
+        <hr>
+        <form method="POST">
+            <button class="controlButtons" type="submit" name="fButton">Forward</button>
+            <button class="controlButtons" type="submit" name="rButton">Right</button>
+            <button class="controlButtons" type="submit" name="lButton">Left</button>
+            <br>
+            <button class="controlButtons" type="submit" name="reset">RESET</button>
+        </form>
+        <div>
+            <h2>Rover Status</h2>
+            <hr>
+            <div class="data">
+                <p>Direction: <strong> <?php echo $activeRover->direction ?> </strong> </p>
+                <p>Position: <strong> <?php echo $activeRover->positionX ?>, <?php echo $activeRover->positionY ?> </strong> </p>
+            </div>
+        </div>
         <br>
-        <button type="submit" name="reset">RESET</button>
-    </form>
-    <h2>Rover Status</h2>
-    <p>Direction: <?php echo $activeRover->direction ?> </p>
-    <p>Position: <?php echo $activeRover->positionX ?>, <?php echo $activeRover->positionY ?> </p>
-    <br>
-    <?php
-    if($activeRover->obstacle){
-        echo 'OBSTACLE DETECTED IN: '. $activeRover->obstacleDetectedX .', '. $activeRover->obstacleDetectedY;
-        ?><br><?
-        echo 'RETURNING TO: '.$activeRover->lastPositionX .', '. $activeRover->lastPositionY;
-    }
-    else{
-        echo 'NO OBSTACLES DETECTED.';
-    }
-    ?>
+        <?php
+        if($activeRover->obstacle){
+            ?>
+            <div class="alert data">
+                <?php
+                echo 'OBSTACLE DETECTED IN: '. $activeRover->obstacleDetectedX .', '. $activeRover->obstacleDetectedY;
+                ?>
+            <br>
+                <?
+                echo 'RETURNING TO: '.$activeRover->lastPositionX .', '. $activeRover->lastPositionY;
+                ?>
+            </div>
+            <?php
+        }
+        else{
+            ?>
+            <div class="data">
+                <?php
+                echo 'NO OBSTACLES DETECTED.';
+                ?>
+            </div>
+            <?php
+        }
+        ?>
+    </div>
 </body>
 </html>
